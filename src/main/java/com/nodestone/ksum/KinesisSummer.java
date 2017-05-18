@@ -46,6 +46,7 @@ public final class KinesisSummer {
      *      https://console.aws.amazon.com/iam/home?#security_credential
      */
     public static final String STREAM_NAME = "rawdata";
+    public static final String REGION = "eu-west-1";
 
     private static final String APP_NAME = "KinesisSummer";
 
@@ -82,6 +83,8 @@ public final class KinesisSummer {
                         credentialsProvider,
                         workerId);
         kinesisClientLibConfiguration.withInitialPositionInStream(InitialPositionInStream.LATEST);
+        kinesisClientLibConfiguration.withRegionName(REGION);
+        
 
         IRecordProcessorFactory recordProcessorFactory = new RecordProcessorFactory();
         Worker worker = new Worker(recordProcessorFactory, kinesisClientLibConfiguration);
