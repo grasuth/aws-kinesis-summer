@@ -1,6 +1,6 @@
-package com.nodestone.aws;
+package com.nodestone.ksum;
 
-public class AwsTest {
+public class KinesisSummer {
     public static void main (String[] args) {
         System.out.println("Hello world!!!!!");
     }
