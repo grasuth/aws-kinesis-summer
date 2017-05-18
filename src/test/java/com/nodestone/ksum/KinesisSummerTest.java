@@ -1,4 +1,4 @@
-package com.nodestone.aws;
+package com.nodestone.ksum;
 
 import org.junit.Test;
 
