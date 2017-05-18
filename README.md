@@ -1,0 +1,1 @@
+# Basic gradle template for AWS services
