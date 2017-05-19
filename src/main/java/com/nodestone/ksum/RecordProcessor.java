@@ -121,6 +121,14 @@ public class RecordProcessor implements IRecordProcessor {
         try {
             // For this app, we interpret the payload as UTF-8 chars.
             data = decoder.decode(record.getData()).toString();
+            
+            try {
+                RawData raw = RawData.fromJSON(data);
+            
+                LOG.info("raw: " + raw.custId.toString() + " " + raw.value.toString());
+            } catch (Exception e) {
+                LOG.info("Can't decode raw data as json, ignoring - data was:" + data);
+            }
 
             LOG.info(record.getSequenceNumber() + ", " + record.getPartitionKey() + ", " + data );
         } catch (NumberFormatException e) {
